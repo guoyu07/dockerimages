@@ -10,6 +10,9 @@ docker exec -it [containerid] /bin/bash
 docker run -p 127.0.0.1:8585:8080 --name [containerid] -t [imageid]
 
 # Stop docker container
-docker stop [containerid]
-docker kill [containerid]
-doker ps
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+docker ps
+
+# Delete all images
+docker rmi $(docker images -q)

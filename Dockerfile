@@ -35,6 +35,13 @@ RUN groupadd -r tomcat && \
  useradd -g tomcat -d ${CATALINA_HOME} -s /sbin/nologin  -c "Tomcat user" tomcat && \
  chown -R tomcat:tomcat ${CATALINA_HOME}
 
+RUN mkdir -p opt/tomcat/currencywar
+COPY CurrencyConvertorSOAPUI.xml opt/tomcat/currencywar
+
+RUN rm -rf  opt/tomcat/currencywar/CurrencyConvertorSOAPUI.war  && \
+    jar -cvf opt/tomcat/currencywar/CurrencyConvertorSOAPUI.war opt/tomcat/currencywar/*  && \
+    cp opt/tomcat/currencywar/CurrencyConvertorSOAPUI.war opt/tomcat/webapps
+
 WORKDIR /opt/tomcat
 
 EXPOSE 8080
