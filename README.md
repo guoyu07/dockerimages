@@ -2,6 +2,6 @@
 # Deploy it into tomcat webapps folder
 # Expose the port to jenkins
 
-docker build -t soapuiimage .
-docker run -it -d  [imageid]
-docker exec -it [containerid] /bin/bash
+docker build -t soapuiimage . 
+docker run -it -d  [imageid] 
+docker exec -it [containerid] /bin/bash 
