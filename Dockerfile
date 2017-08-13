@@ -10,7 +10,7 @@ ENV JAVA_HOME /opt/java
 ENV CATALINA_HOME /opt/tomcat
 ENV PATH $PATH:$JAVA_HOME/bin:$CATALINA_HOME/bin:$CATALINA_HOME/scripts
 
-
+# version,build and temp_num are subjected to change
 ENV JAVA_VERSION 8u144
 ENV JAVA_BUILD 8u144-b01
 ENV TEMP_NUM 090f390dda5b47b9b721c7dfaa008135
