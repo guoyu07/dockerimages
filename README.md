@@ -18,3 +18,6 @@ docker ps
 
 # Delete all images and release memory
 docker rmi $(docker images -q)
+
+# Show Image  dependencies
+docker images -viz | dot -Tpng -o docker.png  
